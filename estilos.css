@@ -1,0 +1,131 @@
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: min-content;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    display: grid;
+    gap: 0em 0em;
+    grid-auto-flow: row;
+    grid-template:
+        "header header header" 80px
+        "links links links"     50px
+        "articles articles side_bar" auto
+        "footer footer footer" 30px /
+        auto    auto    400px
+    ;
+}
+
+.header {
+    background-color: #ff6961;
+    grid-area: header;
+    text-align: center;
+    color: white;
+}
+
+.links {
+    background-color: #84b6f4;
+    grid-area: links;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.articles {
+    background-color: #77dd77;
+    grid-area: articles;
+    height: 33rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 15px;
+    
+}
+.article:first-child{
+    border-top: 1px solid white;
+}
+.article{
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.side_bar {
+    background-color: #f8de7e;
+    grid-area: side_bar;
+    padding-left: 20px;
+}
+.side_bar input[type=text]{
+    width: 70%;
+    height: 1.5rem;
+    border: none;
+    border-radius: 5px;
+}
+.side_bar input[type=button]{
+    background-color: brown;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    color: white;
+    margin-left: 10px;
+
+}
+.search{
+    display: flex;
+    align-items: center;
+}
+.footer {
+    background-color: black;
+    grid-area: footer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul{
+    list-style: none;
+}
+li{
+    float: left;
+    margin: 1rem;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    
+    color: white;
+}
+
+@media (max-width: 500px){
+    .container{
+        grid-template:
+        "header header header" 80px
+        "links links links"     50px
+        "side_bar side_bar side_bar " 80px
+        "articles articles articles" auto
+        "footer footer footer" 30px /
+        auto    auto    400px
+    ;
+    }
+    li{
+        margin: 5px;
+        font-size: small;
+    }
+    h1{
+        font-size: medium;
+    }
+    h2{
+        font-size: small;
+    }
+    ul{
+        padding-left: 0;
+    }
+    p{
+        font-size: small;
+    }
+}
